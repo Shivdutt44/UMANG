@@ -1,309 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Umang Template</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        #umang-background-template {
-            width: 100%;
-            max-width: 287px;
-            aspect-ratio: 638 / 1012;
-            margin: 0 auto;
-            background-image: url("image/page_1.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-            overflow: hidden;
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.7),
-                0 0 0 1px rgba(241, 184, 43, 0.1),
-                inset 0 0 20px rgba(0, 0, 0, 0.5);
-            border-radius: 18px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        #umang-background-template:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.8),
-                0 0 0 1px rgba(241, 184, 43, 0.2),
-                inset 0 0 25px rgba(0, 0, 0, 0.6);
-        }
+  <meta charset="utf-8" />
+  <meta name="description" content="Contact information for Umang Finance including website, email, phone numbers, and address.">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Umang Finance - Final Layout</title>
 
-        /* Premium overlay */
-        #umang-background-template::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(241, 184, 43, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(241, 184, 43, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-            border-radius: 18px;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 
-        /* Decorative corner accents */
-        #umang-background-template::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(135deg, transparent 95%, rgba(241, 184, 43, 0.3) 100%),
-                linear-gradient(-135deg, transparent 95%, rgba(241, 184, 43, 0.3) 100%),
-                linear-gradient(45deg, transparent 95%, rgba(241, 184, 43, 0.3) 100%),
-                linear-gradient(-45deg, transparent 95%, rgba(241, 184, 43, 0.3) 100%);
-            z-index: 1;
-            border-radius: 18px;
-            pointer-events: none;
-        }
-
-        /* ✅ Top center image (like a title/emblem) */
-        #umang-background-template .top-center-img {
-            position: absolute;
-            top: 32%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
-            animation: float 4s ease-in-out infinite;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
-        }
-
-        #umang-background-template .top-center-img img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0px); }
-            50% { transform: translateX(-50%) translateY(-8px); }
-        }
-
-        /* ✅ Logo rectangle (top-right corner) */
-        #umang-background-template .logo-box {
-            position: absolute;
-            top: 5%;
-            right: 10%;
-            width: 75px;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(15, 15, 15, 0.85);
-            padding: 8px;
-            z-index: 2;
-            border: 1px solid rgba(241, 184, 43, 0.4);
-            border-radius: 10px;
-            box-shadow: 
-                0 5px 15px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        #umang-background-template .logo-box:hover {
-            border-color: rgba(241, 184, 43, 0.7);
-            box-shadow: 
-                0 8px 20px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-            transform: scale(1.05);
-        }
-
-        #umang-background-template .logo-box img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        }
-
-        /* ✅ Left-side bottom text */
-        #umang-background-template .info-text {
-            position: absolute;
-            left: 10%;
-            bottom: 15%;
-            font-weight: 600;
-            font-size: 10px;
-            line-height: 1.6;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            text-align: left;
-            color: #f1b82b;
-            z-index: 3;
-            background: rgba(10, 10, 10, 0.75);
-            padding: 12px 15px;
-            border-radius: 10px;
-            backdrop-filter: blur(12px);
-            box-shadow: 
-                0 5px 20px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-left: 3px solid #f1b82b;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-            transition: all 0.3s ease;
-        }
-        
-        #umang-background-template .info-text:hover {
-            background: rgba(15, 15, 15, 0.85);
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        }
-
-        #umang-background-template .info-text span {
-            display: block;
-            margin-bottom: 4px;
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        #umang-background-template .info-text span::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #f1b82b;
-        }
-
-        #umang-background-template .info-text span:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Decorative elements */
-        .decoration {
-            position: absolute;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .decoration.circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(241, 184, 43, 0.1) 0%, transparent 70%);
-            top: 10%;
-            left: -10%;
-        }
-        
-        .decoration.square {
-            width: 80px;
-            height: 80px;
-            transform: rotate(45deg);
-            border: 1px solid rgba(241, 184, 43, 0.1);
-            bottom: 15%;
-            right: -5%;
-        }
-
-        /* Responsive behavior */
-        @media (max-width: 400px) {
-            #umang-background-template {
-                max-width: 260px;
-            }
-            
-            #umang-background-template .info-text {
-                left: 8%;
-                bottom: 12%;
-                font-size: 9px;
-                padding: 10px 12px;
-            }
-            
-            #umang-background-template .logo-box {
-                top: 4%;
-                right: 8%;
-                width: 65px;
-            }
-            
-            #umang-background-template .top-center-img {
-                width: 70px;
-                top: 30%;
-            }
-        }
-
-        @media (max-width: 320px) {
-            #umang-background-template {
-                max-width: 240px;
-            }
-            
-            #umang-background-template .info-text {
-                left: 6%;
-                bottom: 10%;
-                font-size: 8px;
-                padding: 8px 10px;
-            }
-            
-            #umang-background-template .logo-box {
-                top: 3%;
-                right: 6%;
-                width: 60px;
-            }
-            
-            #umang-background-template .top-center-img {
-                width: 65px;
-                top: 28%;
-            }
-        }
-    </style>
 </head>
 <body>
-    <section id="umang-background-template">
-        <!-- Decorative elements -->
-        <div class="decoration circle"></div>
-        <div class="decoration square"></div>
-        
-        <!-- ✅ Top center image -->
-        <div class="top-center-img">
-            <img
-                src="https://cdn.shopify.com/s/files/1/0946/9788/1889/files/images_19.jpg?v=1753367925"
-                alt="Top Center Decorative Image"
-            >
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="stage">
+    <main class="poster page-1" id="main" role="main" aria-label="Umang Finance contact information poster">
+
+      <!-- Logo -->
+      <div class="logo-wrap" role="banner">
+        <img src="https://cdn.shopify.com/s/files/1/0946/9788/1889/files/logo.png?v=1759816150" alt="Umang Finance logo">
+      </div>
+
+      <!-- Customer Image -->
+      <div class="top-center-img">
+        <img src="image/customer.jpg" alt="Customer image">
+      </div>
+
+      <!-- Contact Info -->
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="sr-only">Contact Information</h2>
+       
+        <div class="row">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>NAME:</strong>SHIV DUTT CHAUHAN</div>
+        </div>
+        <div class="row">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>BLOOD GROUP:</strong> B+</div>
         </div>
 
-        <!-- ✅ Top-right logo box -->
-        <div class="logo-box">
-            <img
-                src="https://cdn.shopify.com/s/files/1/0946/9788/1889/files/logo.png?v=1759816150"
-                alt="Umang Logo"
-            >
+  <div class="row">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>CONTACT NO:</strong>+91 7985120858</div>
         </div>
 
-        <!-- ✅ Bottom-left text -->
-        <div class="info-text">
-            <span>BLOOD GROUP : O+</span>
-            <span>CONTACT NO. : +91 98765 43210</span>
-            <span>LOCATION : Mumbai, India</span>
+        <div class="row">
+          <span class="dot" aria-hidden="true"></span>
+          <div><strong>LOCATION:</strong> 3/302, VEVEK KHAND GOMATI NAGAR LUKHNOW UTTAR PRADESH INDIA</div>
         </div>
-    </section>
+      </section>
+
+      <!-- Spacer -->
+      <div class="globe-space" aria-hidden="true"></div>
+
+      <!-- Address -->
+      <address class="address" aria-labelledby="address-heading">
+        <h2 id="address-heading" class="sr-only">NAME</h2>
+        <span class="pin" aria-hidden="true"></span>
+        <div>
+          <strong>SHIV DUTT CHAUHAN</strong>, Hosur Rd,<br>
+          Kudlu Gate, Krishna Reddy Industrial Area,<br>
+          H.S.R. Extension, Bengaluru, Karnataka-560068.
+        </div>
+      </address>
+
+    </main>
+  </div>
+</body>
+</html>
+
 </body>
 </html>
