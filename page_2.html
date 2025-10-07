@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Umang Finance - Final Layout</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --poster-width: 900px;
+      --poster-height: 1275px;
+      --padding-left: 44px;
+      --padding-right: 44px;
+      --top-offset: 136px;
+      --logo-width: 200px;
+
+      --gold: #f2b705;
+      --text-dark: #111;
+      --muted: #444;
+
+      --divider-height: 4px;
+      --divider-top: 300px;
+      --contact-width: 90%;
+      --address-bottom: 44px;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #efefef;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .stage {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      box-sizing: border-box;
+    }
+
+    .poster {
+      position: relative;
+      width: var(--poster-width);
+      height: var(--poster-height);
+      background-image: url("https://cdn.shopify.com/s/files/1/0946/9788/1889/files/page_2.png?v=1759816238");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100% 100%;
+      box-shadow: 0 18px 40px rgba(11, 18, 30, 0.12);
+      border-radius: 6px;
+      overflow: visible;
+      transform-origin: center top;
+    }
+
+    /* Scale-down behavior for smaller screens */
+    @media (max-width: 980px) { .poster { transform: scale(0.88); } }
+    @media (max-width: 820px) { .poster { transform: scale(0.78); } }
+    @media (max-width: 640px) { .poster { transform: scale(0.64); } }
+    @media (max-width: 420px) { .poster { transform: scale(0.52); } }
+
+    /* ===== Logo ===== */
+    .logo-wrap {
+      position: absolute;
+      top: calc(var(--top-offset) + 2px);
+      right: var(--padding-right);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .logo-wrap img {
+      width: var(--logo-width);
+      height: auto;
+      display: block;
+      pointer-events: auto;
+    }
+
+    /* ===== Contact Info ===== */
+    .contact {
+      position: absolute;
+      left: var(--padding-left);
+      top: calc(var(--top-offset) + 6px);
+      width: var(--contact-width);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: 0.1px;
+    }
+    .contact a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact a:hover { text-decoration: underline; }
+
+    .contact .row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    .contact .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex: 0 0 12px;
+      margin-top: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    .contact strong { color: var(--text-dark); font-weight: 600; }
+
+    /* ===== Divider ===== */
+    .gold-divider {
+      position: absolute;
+      left: var(--padding-left);
+      top: var(--divider-top);
+      width: var(--contact-width);
+      height: var(--divider-height);
+      background: linear-gradient(90deg, rgba(242,183,5,1) 0%, rgba(242,183,5,0.95) 60%, rgba(242,183,5,1) 100%);
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(242,183,5,0.08);
+    }
+
+    .globe-space {
+      position: absolute;
+      top: 156px;
+      left: 0;
+      right: 0;
+      height: 640px;
+      pointer-events: none;
+    }
+
+    /* ===== Address ===== */
+    .address {
+      position: absolute;
+      left: var(--padding-left);
+      bottom: var(--address-bottom);
+      width: 56%;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .pin {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fff 0 14%, var(--gold) 14% 100%);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      flex: 0 0 18px;
+      margin-top: 3px;
+    }
+
+    .address strong { color: var(--text-dark); font-weight: 600; }
+
+    /* ===== Updated Mobile Breakpoint ===== */
+    @media (max-width: 640px) {
+      :root {
+        --contact-width: 84%;
+        --logo-width: 105px;
+        --divider-top: 242px;
+      }
+      .contact {
+        top: 110px;
+        font-size: 13px;
+      }
+      .address { font-size: 13px; }
+    }
+
+    .poster * { -webkit-font-smoothing: antialiased; }
+  </style>
+</head>
+<body>
+
+  <div class="stage">
+    <section class="poster">
+
+      <!-- Logo -->
+      <div class="logo-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0946/9788/1889/files/logo.png?v=1759816150" alt="Umang Finance logo">
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact">
+        <div class="row">
+          <span class="dot"></span>
+          <div><a href="https://www.umangone.in" target="_blank">www.umangone.in</a></div>
+        </div>
+        <div class="row">
+          <span class="dot"></span>
+          <div><a href="mailto:care@umangone.in">care@umangone.in</a></div>
+        </div>
+        <div class="row">
+          <span class="dot"></span>
+          <div><strong>HOD:</strong> +91 9084050574</div>
+        </div>
+        <div class="row">
+          <span class="dot"></span>
+          <div><strong>Customer Support:</strong> +91 1732361111</div>
+        </div>
+        <div class="row">
+          <span class="dot"></span>
+          <div><strong>Availability:</strong> Monday to Saturday, 10:00 AM – 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="gold-divider"></div>
+
+      <!-- Spacer -->
+      <div class="globe-space"></div>
+
+      <!-- Address -->
+      <address class="address">
+        <span class="pin"></span>
+        <div>
+          <strong>Noval Tech Park</strong>, Hosur Rd,<br>
+          Kudlu Gate, Krishna Reddy Industrial Area,<br>
+          H.S.R. Extension, Bengaluru, Karnataka-560068.
+        </div>
+      </address>
+
+    </section>
+  </div>
+
+</body>
+</html>
