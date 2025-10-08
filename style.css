@@ -14,12 +14,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-}
-
 #umang-background-template {
     width: 100%;
     max-width: 287px;
@@ -310,7 +304,7 @@ body {
   --muted: #444;
 
   --divider-height: 4px;
-  --divider-top: 300px;
+  --divider-top: 290px;
   --contact-width: 90%;
   --address-bottom: 44px;
 }
@@ -333,17 +327,10 @@ html, body {
   box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
-  .stage {
-    padding: 14px;
-  }
-}
-
 .poster {
   position: relative;
   width: var(--poster-width);
   height: var(--poster-height);
-  background-image: url("image/page_1.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -354,6 +341,15 @@ html, body {
 
 .page-1 {
   background-image: url("image/page_1.png");
+}
+
+.page-2 {
+  background-image: url("image/page_2.png");
+}
+
+.page-2 .gold-divider {
+  left: 0;
+  width: 100%;
 }
 
 .page-1 .contact {
@@ -433,10 +429,10 @@ html, body {
 
 .globe-space {
   position: absolute;
-  top: 156px;
+  top: var(--globe-top, 156px);
   left: 0;
   right: 0;
-  height: 640px;
+  height: var(--globe-height, 640px);
   pointer-events: none;
 }
 
@@ -474,7 +470,7 @@ html, body {
     --padding-left: 120px;
     --top-offset: 97px;
     --logo-width: 142px;
-    --divider-top: 213px;
+    --divider-top: 250px;
     --address-bottom: 31px;
     --contact-width: 84%;
   }
@@ -484,8 +480,8 @@ html, body {
   }
   .address { font-size: 13px; }
   .globe-space {
-    top: 109px;
-    height: 452px;
+    top: 260px;
+    height: 614px;
   }
 }
 
@@ -493,10 +489,10 @@ html, body {
   :root {
     --poster-width: 480px;
     --poster-height: 682px;
-    --padding-left: 90px;
+    --padding-left: 26px;
     --top-offset: 73px;
     --logo-width: 107px;
-    --divider-top: 160px;
+    --divider-top: 210px;
     --address-bottom: 23px;
     --contact-width: 84%;
   }
@@ -506,8 +502,8 @@ html, body {
   }
   .address { font-size: 12px; }
   .globe-space {
-    top: 82px;
-    height: 341px;
+    top: 220px;
+    height: 439px;
   }
 }
 
@@ -516,20 +512,24 @@ html, body {
     --poster-width: 320px;
     --poster-height: 454px;
     --padding-left: 60px;
+    --padding-right: 52px;
     --top-offset: 48px;
     --logo-width: 71px;
-    --divider-top: 107px;
+    --divider-top: 175px;
     --address-bottom: 15px;
     --contact-width: 84%;
   }
   .contact {
-    top: 54px;
+    top: 80px;
     font-size: 11px;
   }
   .address { font-size: 11px; }
   .globe-space {
-    top: 54px;
-    height: 227px;
+    top: 185px;
+    height: 254px;
+  }
+  .logo-wrap {
+    top: 10px;
   }
 }
 
