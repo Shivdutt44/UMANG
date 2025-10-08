@@ -14,6 +14,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+}
+
 #umang-background-template {
     width: 100%;
     max-width: 287px;
@@ -327,18 +333,23 @@ html, body {
   box-sizing: border-box;
 }
 
+@media (max-width: 480px) {
+  .stage {
+    padding: 14px;
+  }
+}
+
 .poster {
   position: relative;
   width: var(--poster-width);
   height: var(--poster-height);
-  background-image: url("image/page_2.png");
+  background-image: url("image/page_1.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   box-shadow: 0 18px 40px rgba(11, 18, 30, 0.12);
   border-radius: 6px;
   overflow: visible;
-  transform-origin: center top;
 }
 
 .page-1 {
@@ -458,15 +469,68 @@ html, body {
 /* ===== Updated Mobile Breakpoint ===== */
 @media (max-width: 640px) {
   :root {
+    --poster-width: 640px;
+    --poster-height: 905px;
+    --padding-left: 120px;
+    --top-offset: 97px;
+    --logo-width: 142px;
+    --divider-top: 213px;
+    --address-bottom: 31px;
     --contact-width: 84%;
-    --logo-width: 105px;
-    --divider-top: 242px;
   }
   .contact {
-    top: 110px;
+    top: 103px;
     font-size: 13px;
   }
   .address { font-size: 13px; }
+  .globe-space {
+    top: 109px;
+    height: 452px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --poster-width: 480px;
+    --poster-height: 682px;
+    --padding-left: 90px;
+    --top-offset: 73px;
+    --logo-width: 107px;
+    --divider-top: 160px;
+    --address-bottom: 23px;
+    --contact-width: 84%;
+  }
+  .contact {
+    top: 79px;
+    font-size: 12px;
+  }
+  .address { font-size: 12px; }
+  .globe-space {
+    top: 82px;
+    height: 341px;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --poster-width: 320px;
+    --poster-height: 454px;
+    --padding-left: 60px;
+    --top-offset: 48px;
+    --logo-width: 71px;
+    --divider-top: 107px;
+    --address-bottom: 15px;
+    --contact-width: 84%;
+  }
+  .contact {
+    top: 54px;
+    font-size: 11px;
+  }
+  .address { font-size: 11px; }
+  .globe-space {
+    top: 54px;
+    height: 227px;
+  }
 }
 
 .poster * { -webkit-font-smoothing: antialiased; }

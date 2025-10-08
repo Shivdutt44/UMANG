@@ -3,6 +3,8 @@ function updateDynamicStyles() {
   const width = window.innerWidth;
   const root = document.documentElement;
 
+  console.log('Screen width:', width);
+
   // Dynamic image width based on screen size
   let imageWidth;
   if (width <= 420) {
@@ -13,27 +15,9 @@ function updateDynamicStyles() {
     imageWidth = '120px';
   }
   root.style.setProperty('--dynamic-image-width', imageWidth);
+  console.log('Image width set to:', imageWidth);
 
-  // Dynamic poster scale
-  let scale;
-  if (width <= 420) {
-    scale = 0.52;
-  } else if (width <= 640) {
-    scale = 0.64;
-  } else if (width <= 820) {
-    scale = 0.78;
-  } else if (width <= 980) {
-    scale = 0.88;
-  } else {
-    scale = 1;
-  }
-  root.style.setProperty('--dynamic-scale', scale);
-
-  // Apply scale to poster
-  const poster = document.querySelector('.poster');
-  if (poster) {
-    poster.style.transform = `scale(${scale})`;
-  }
+  // Poster size is responsive via CSS media queries
 }
 
 // Initial call
